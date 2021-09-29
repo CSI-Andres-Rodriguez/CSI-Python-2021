@@ -70,10 +70,10 @@ print(f"Computer selected: {computerChoice}")
 
 Give a python example for each logic operator in the module image.
 
- - Answers:
-   - OR:
-   - AND: 
-   - NOT: 
+ - Answers: 
+   - OR: Any data point present, inclusive
+   - AND: All data points are present, exclusive
+   - NOT: One data point is presented but no other
 
 
 Type down any class notes below this sentence:
