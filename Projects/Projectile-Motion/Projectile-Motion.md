@@ -8,7 +8,7 @@
 
 # Calculate the distance traveled by a projectile `(100pts)`
 
-<!-- ## [Select a projectile weapon](https://www.giantbomb.com/profile/phatcat/lists/modern-military-weapons/27505/) -->
+<!-- ## [Select a projectile weapon]/www.giantbomb.com/profile/phatcat/lists/modern-military-weapons/27505/(https:/) -->
 ## [Select a projectile weapon.](https://escapefromtarkov.fandom.com/wiki/Weapons)`(5pts)`
 * Store its name as a variable.
 * Find the cartridge calibre for the weapon you selected. eg. 5.56 for an M4.
@@ -50,27 +50,17 @@
 <br>
 
 ## Convert your script parameters into a single JSON Object `(5pts)`
-* Change your experimental function to receive a single object as a parameter.
-  * call your object `experimentalData`
-  * Update your function variable references to use this object. eg. `experimentalData.velocity_ms`
+* call your object `experimentalData`
 
 <br>
 
 ## Create a Python Class  `(15pts)`
-* Comment out your `experimentalData` object 
-  * Highlight section and press `CTRL + /`
-* Create a file and class named `ExperimentalData`
-* Convert your JSON Object into parameters for the class.
-* Use a Constructor on your experiment. It should be similar to your original function parameter list.
-  * Make sure your first parameter is `self`.
-  * Store all parameter values to self.
-* Construct your object in `Projectile-Motion.py` and use it as your parameter object for your function.  
-  * Add an import to your class. 
-    * `from ExperimentalData import ExperimentalData`
-  * Modify your function references to use the values from this object.
+* Name your class `ExperimentalData`
+* Convert all tha variables you have created ia class.
+* Use a Constructor and `json.dumps()` on your experiments.
+* Change your function to receive a single object as a parameter.
+  * Use object references on your function.
 
-  * Specify the data type of your function to be `ExperimentalData`
-  * Update your function`s variable references.
 
 <br>
 
@@ -107,10 +97,9 @@ g_ms2[planet]
 ```
 * Update your object class.
 * Update your JSON
-
 <br>
 
-After you finish, take a screenshot of the terminal and name it using the following convention: `Projectile-Motion.png`
+After you finish, take a screenshot of the terminal and name it using the following convention: `Name-Lastname-Projectile.png`
 
 
 <!-- | Planet | Gravitational Acceleration (m/s^2) | 
