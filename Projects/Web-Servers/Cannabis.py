@@ -1,4 +1,4 @@
-class ExperimentData: 
+class Cannabis: 
     def __init__(self,id:int,uid:str,strain:str,cannabinoid_abbreviation:str,cannabinoid:str,terpene:str,medical_use:str,health_benefit:str, category:str, type:str, buzzword:str, brand:str ):
         self.id = id
         self.uid = uid
