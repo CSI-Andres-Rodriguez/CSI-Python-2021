@@ -70,7 +70,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 # This is the URL from which we will request the data
 addressURL = "https://random-data-api.com/api/address/random_address?size=100"
 
-# Create a list to populate with our data
+x# Create a list to populate with our data
 addresses:RandomAddress = [] 
 
 # Execute HTTP Request
