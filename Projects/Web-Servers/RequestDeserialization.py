@@ -1,4 +1,6 @@
 import json, ssl
+import os
+from pathlib import Path
 import urllib.request
 from Cannabis import Cannabis
 
@@ -23,3 +25,9 @@ for r in requestData:
     cannabises.append(cannabis) 
     # Print id
     print(cannabis.strain)
+
+myPath = Path(__file__).parents[0]
+myFilePath = os.path.join(myPath, 'responses')
+
+os.mkdir(myFilePath)
+
