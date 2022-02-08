@@ -14,27 +14,35 @@ cannabisURL = "https://random-data-api.com/api/cannabis/random_cannabis?size=100
 cannabises:Cannabis = [] 
 
 # Execute HTTP Request
-req = urllib.request.Request(cannabisURL)
-requestData = json.loads(urllib.request.urlopen(req).read())
+# req = urllib.request.Request(cannabisURL)
+# requestData = json.loads(urllib.request.urlopen(req).read())
 
-# Loop over JSON items and Deserialize them into python objects
-for r in requestData:  
-    # Deserialize 
-    cannabis:Cannabis = Cannabis(**r)
-    # Add object to list
-    cannabises.append(cannabis) 
-    # Print id
-    print(cannabis.strain)
+# # Loop over JSON items and Deserialize them into python objects
+# for r in requestData:  
+#     # Deserialize 
+#     cannabis:Cannabis = Cannabis(**r)
+#     # Add object to list
+#     cannabises.append(cannabis) 
+#     # Print id
+#     print(cannabis.strain)
 
 myPath = Path(__file__).parents[0]
-myFilePath = os.path.join(myPath, 'responses')
+myFolderPath = os.path.join(myPath, 'responses')
 
-os.mkdir(myFilePath)
+os.mkdir(myFolderPath)
 
-for r in requestData:  
-    # Deserialize 
-    cannabis:Cannabis = Cannabis(**r)
-    # Add object to list
-    cannabises.append(cannabis) 
-    # Print id
-    print(cannabis.strain)
+for x in range(0,100):
+    req = urllib.request.Request(cannabisURL)
+    requestData = json.loads(urllib.request.urlopen(req).read())
+    
+    for r in requestData:  
+        # Deserialize 
+        cannabis:Cannabis = Cannabis(**r)
+        # Add object to list
+        cannabises.append(cannabis) 
+        # Print id
+        print(cannabis.strain)
+        myFilePath = os.path.join(myFolderPath, f"{cannabis.uid}.json")
+
+        with open(myFilePath, 'w') as outfile:
+            json.dump(cannabis.__dict__, outfile)
