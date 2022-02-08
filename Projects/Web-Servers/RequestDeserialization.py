@@ -31,3 +31,10 @@ myFilePath = os.path.join(myPath, 'responses')
 
 os.mkdir(myFilePath)
 
+for r in requestData:  
+    # Deserialize 
+    cannabis:Cannabis = Cannabis(**r)
+    # Add object to list
+    cannabises.append(cannabis) 
+    # Print id
+    print(cannabis.strain)
