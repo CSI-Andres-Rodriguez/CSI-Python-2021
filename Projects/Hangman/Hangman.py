@@ -17,3 +17,4 @@ r = json.loads(urllib.request.urlopen(req).read())
 cannabis:Cannabis = Cannabis(**r)
 
 print(cannabis.strain)
+
