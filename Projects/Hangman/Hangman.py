@@ -1,6 +1,4 @@
 import json, ssl
-import os
-from pathlib import Path
 import urllib.request
 from Cannabis import Cannabis
 
@@ -14,7 +12,37 @@ cannabisURL = "https://random-data-api.com/api/cannabis/random_cannabis"
 req = urllib.request.Request(cannabisURL)
 r = json.loads(urllib.request.urlopen(req).read())
 
+
 cannabis:Cannabis = Cannabis(**r)
 
-print(cannabis.strain)
+IncorrectLetters = []
+
+print(len(cannabis.strain) * "_ ")
+
+ #print(cannabis.strain)
+
+def getInput():
+    while(True):
+        guess=input("Your guess is")
+        if guess .isnumeric()== True :
+            print("Needs to be a letter")
+            continue
+
+        if len(guess) !=1 :
+            print("Needs to be only one letter")
+            continue 
+
+        if not guess.isalpha():
+            print("No special characters")
+            continue
+
+        if (guess in IncorrectLetters):
+            print("Letter is already used")
+            continue
+
+        IncorrectLetters.append(guess)
+        return guess
+
+print(getInput())
+    
 
