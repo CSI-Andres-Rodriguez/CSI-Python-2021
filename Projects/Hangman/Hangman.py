@@ -89,7 +89,7 @@ H A N G M A N -
   I    l
   *    l
  $I$   l
- ( )   l
+ (    l
        l
 <=======>""", 
 """
@@ -105,6 +105,8 @@ H A N G M A N -
 ]
 
 #incorrect letters in my hangman
+UsedLetters = [] # the different letters that you already used during the game
+
 print(myCannabis)
 def getInput():
     invalid_characters = ("1","2","3","4","5","6","7","8","9","0","!","@","#","$","%","^","&","*","(",")","{","}","[","]",";","'","<",",",".",">","/","?","|")
@@ -116,18 +118,18 @@ def getInput():
             continue
 
         if len(guess) !=1 :
-            print("Needs to be only one letter")
+            print("Not more than onw letter")
             continue 
 
         if not guess.isalpha():
             print("No special characters")
             continue
 
-        if (guess in IncorrectLetters):
+        if (guess in UsedLetters):
             print("Letter is already used")
             continue
 
-        IncorrectLetters.append(guess) 
+        UsedLetters.append(guess) 
         return guess
 
 # print(getInput())
@@ -137,8 +139,8 @@ def printword():
     len(myCannabis)
     for letter in myCannabis :
         print(letter)
-        # letter in(IncorrectLetters)
-        if letter not in IncorrectLetters :
+    # letter in(UsedLetter)
+        if letter not in UsedLetters :
             temp+="_"
         else:
             temp+=letter
@@ -146,8 +148,8 @@ def printword():
         return temp
 
 def printStep():
-    counter = 0
-    for letter in used:
+    counter = 0 #putting the counter
+    for letter in UsedLetters:
         if letter not in myCannabis:
          counter= counter + 1
 
@@ -157,3 +159,4 @@ while True :
     printStep()
     getInput()
     printword()
+
