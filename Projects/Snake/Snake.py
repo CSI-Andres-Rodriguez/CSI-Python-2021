@@ -1,11 +1,27 @@
-import pygame #imports pygame
-pygame.init() #initiates the game
-dis=pygame.display.set_mode((400,300)) #the size of the display of the game
-pygame.display.update() # play the game
-pygame.quit() # finished the game
-quit() # game finished
+# access the script from another Python file
+import pygame
+#initiates the game
+pygame.init() 
+#the size of the display of the game
+dis=pygame.display.set_mode((400,300)) 
+#name of the game
+pygame.display.set_caption('Snake game by Edureka')
+# it will do a variable name "game over" that has a value of false
+game_over=False
+# if the value was not false then do a loop
+while not game_over: 
+    # event is a temporary variable that represent every variable on the pygame list (forloop)
+    for event in pygame.event.get():
+        # if the game find an envent that finished the game and change te value of the varieable to true
+        if event.type==pygame.QUIT:
+            # the value of the variable is true
+            game_over=True
+        # if the value is not false then do a loop and print event
+        print(event)
+# game finished
+quit() 
 
-#white = (255, 255, 255)
+#white = (255, 255, 255) 
 #yellow = (255, 255, 102)
 #black = (0, 0, 0)
 #red = (213, 50, 80)
@@ -15,17 +31,3 @@ quit() # game finished
 #pink = (238, 32, 224)
 #purple = (135, 32, 238)
   
-dis_width = 600
-dis_height = 400
- 
-dis = pygame.display.set_mode((dis_width, dis_height))
-pygame.display.set_caption('Snake Game by Edureka')
- 
-clock = pygame.time.Clock()
- 
-snake_block = 10
-snake_speed = 15
- 
-font_style = pygame.font.SysFont("bahnschrift", 25)
-score_font = pygame.font.SysFont("comicsansms", 35)
- 
