@@ -1,6 +1,17 @@
 # access the script from another Python file
 import pygame
 #initiates the game
+pygame.init()
+#the size of the display of the game
+dis=pygame.display.set_mode((400,300))
+#it refresh the game and the screen
+pygame.display.update()
+# 
+pygame.quit()
+
+# access the script from another Python file
+import pygame
+#initiates the game
 pygame.init() 
 #the size of the display of the game
 dis=pygame.display.set_mode((400,300)) 
@@ -16,10 +27,9 @@ while not game_over:
         if event.type==pygame.QUIT:
             # the value of the variable is true
             game_over=True
-        # if the value is not false then do a loop and print event
+        # if the value is not false then do a loop and prints out all the actions that take place on the screen
         print(event)
 # game finished
-quit() 
 
 #white = (255, 255, 255) 
 #yellow = (255, 255, 102)
@@ -31,3 +41,17 @@ quit()
 #pink = (238, 32, 224)
 #purple = (135, 32, 238)
   
+
+import pygame
+pygame.init()
+dis=pygame.display.set_mode((400,300))
+pygame.display.update()
+pygame.display.set_caption('Snake game by Edureka')
+game_over=False
+while not game_over:
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            game_over=True
+ 
+pygame.quit()
+quit()
