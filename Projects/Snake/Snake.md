@@ -3,8 +3,8 @@
                 width="50%" 
                 height="50%" />          
 </div>
-
-# [Snake](https://www.edureka.co/blog/snake-game-with-pygame/)
+(https://www.edureka.co/blog/snake-game-with-pygame/)
+# [Snake]
 
 <br>
 
